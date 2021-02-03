@@ -1070,11 +1070,11 @@ h3 {
     left: 0;
     right: 0;
     margin: auto;
-    top: 50%;
+    top: 20%;
     transform: translateY(-50%);
     display: inline-block;
-    width: 270px;
-    height: 270px;
+    width: 200px;
+    height: 200px;
   }
 }
 
