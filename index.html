@@ -306,33 +306,30 @@
                     <div class="single_program program_bg_3 text-center">
                         <div class="program_inner ">
                             <p><b>신부측 계좌번호</b><br>
-                              카카오뱅크 <div id="textDiv">3333049000679</div>(양지하)<br>
-                              <button id="copyBtn">계좌 복사하기</button><br>
-                              <b>신랑측 계좌번호</b><br>
-                              국민은행 78100101362033(조승모)
+                              카카오뱅크 3333049000679 (양지하)<br>
+                              <button class="btn" data-clipboard-text="3333049000679">
+                                  <small>복사하기</small>
+                              </button>
                             </p>
+                            <p><b>신랑측 계좌번호</b><br>
+                              국민은행 78100101362033 (조승모)<br>
+                              <button class="btn" data-clipboard-text="78100101362033">
+                                  <small>복사하기</small>
+                              </button>
+                            </p>
+                            <script src="js/clipboard.min.js"></script>
                             <script>
-                                var copyBtn = document.getElementById("copyBtn");
-                                // 버튼 클릭 이벤트
-                                copyBtn.addEventListener("click", function(){
-                                   // 복사할 텍스트를 변수에 할당해줍니다.
-                                    var text = document.getElementById("textDiv").innerText;
-                                    // input text 태그를 생성해줍니다.
-                                    var createInput = document.createElement("input");
-                                    createInput.setAttribute("type", "text");
-                                    // 가상으로 가져올 태그에 만들어준 input 태그를 붙여줍니다.
-                                    document.getElementById("textDiv").appendChild(createInput);
-                                    // 만든 input 태그의 value 값에 복사할 텍스트 값을 넣어줍니다.
-                                    createInput.value = text;
-                                    // 복사 기능을 수행한 후
-                                    createInput.select();
-                                    document.execCommand('copy');
-                                    // 가상으로 붙여주었던 input 태그를 제거해줍니다.
-                                    document.getElementById("textDiv").removeChild(createInput);
-                                    alert('복사가 완료되었습니다.');
-                                });
-                            </script>
+                              var btns = document.querySelectorAll('button');
+                              var clipboard = new ClipboardJS(btns);
 
+                              clipboard.on('success', function (e) {
+                                console.log(e);
+                              });
+
+                              clipboard.on('error', function (e) {
+                                console.log(e);
+                              });
+                            </script>
 
                             <img src="img/program_details/ornaments.png" alt="">
                         </div>
@@ -407,8 +404,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="single_lover_story text-center">
-                      <iframe src="
-https://docs.google.com/spreadsheets/d/1kA0VyejhdSgMmIku0COtmsOcRCUWY38Sex2G8WD6u2Q/pubhtml/sheet?headers=false&gid=1452735159&range=B2:C100" width="300" height="350" frameborder="0"></iframe>
+                      <iframe src="https://docs.google.com/spreadsheets/d/1kA0VyejhdSgMmIku0COtmsOcRCUWY38Sex2G8WD6u2Q/pubhtml/sheet?headers=false&gid=1452735159&range=B2:C100" width="300" height="350" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -472,41 +468,6 @@ made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target
             ));
         });
     </script>
-    <script>
-        function initMap() {
-            var uluru = {
-                lat: -25.363,
-                lng: 131.044
-            };
-            var grayStyles = [{
-                    featureType: "all",
-                    stylers: [{
-                            saturation: -90
-                        },
-                        {
-                            lightness: 50
-                        }
-                    ]
-                },
-                {
-                    elementType: 'labels.text.fill',
-                    stylers: [{
-                        color: '#ccdee9'
-                    }]
-                }
-            ];
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: -31.197,
-                    lng: 150.744
-                },
-                zoom: 9,
-                styles: grayStyles,
-                scrollwheel: false
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
     </script>
 
 
